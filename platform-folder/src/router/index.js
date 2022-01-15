@@ -4,9 +4,16 @@ import homePage from '../views/home_page.vue'
 const routes = [
 	{
 		path: "/",
-		title: "FAGgames",
 		component: homePage
-	}
+	},
+	{
+		path: "/login",
+		component: () => import('../views/login.vue')
+	},
+	{
+		path: "/register",
+		component: () => import('../views/register.vue')
+	},
 ];
 
 const router = createRouter({
