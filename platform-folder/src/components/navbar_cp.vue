@@ -7,23 +7,15 @@
             <router-link class="navbar-logo d-flex align-items-center mr-auto" to="/">
                 <img class="nav_logo" src="../assets/logo_nav.jpg" alt="">
             </router-link>
-            <form class="search-form d-flex align-items-center">
-                <button class="search-btn nav-icon" type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20">
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-                    </svg>
-                </button>
-                <input class="search-input" type="search" placeholder="Search " />
-            </form>
+            <!--<div class="search-wrapper d-flex mr-auto">
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="Search games,consoles and more...">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>-->
             <ul class="navbar-nav d-flex mr-auto">
-                <li class="nav-item">
-                    <router-link class="nav-link" to="/trade"><i class="fas fa-exchange-alt"></i></router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link class="nav-link" to="/products"><i class="fas fa-gamepad"></i></router-link>
-                </li>
                 <li class="nav-item">
                     <router-link class="nav-link" to="/contacts"><i class="fas fa-mobile-alt"></i></router-link>
                 </li>
@@ -31,9 +23,9 @@
                     <router-link class="nav-link" to="/login"><i class="fas fa-user"></i></router-link>
                 </li>
             </ul>
-            <router-link class="navbar-logo d-flex align-items-center mr-auto" to="purchases">
-                <i class="fas fa-shopping-cart"></i>
-            </router-link>
+            <div class="navbar-logo d-flex align-items-center mr-auto">
+                <h1>FA Enterprises</h1>
+            </div>
         </nav>
         <router-view/>
     </header>
@@ -163,7 +155,7 @@ export default {
     }
 
     .justify-content-between {
-            justify-content: space-between;
+        justify-content: space-between;
     }
 
     .justify-content-around {
@@ -241,7 +233,7 @@ export default {
     }
 
     .navbar-logo {
-        padding: 0.5rem 0;
+        padding: 0 0;
     }
 
     .navbar-nav{
@@ -281,21 +273,41 @@ export default {
         height: 50px;
     }
 
-    .search-btn {
-        background: none;
-        border: none;
+    .search-wrapper{
+        width: 30%;
     }
 
-    .search-input {
-        background: none;
-        border: none;
-        margin-left: 1.25rem;
+    .search {
+        width: 100%;
+        position: relative;
+        display: flex;
     }
 
-    ::placeholder {
-        color: var(--medium-gray);
-        font-size: 0.85rem;
-        font-weight: 500;
+    .searchTerm {
+        width: 100%;
+        border: 3px solid #00B4CC;
+        border-right: none;
+        padding: 5px;
+        height: 36px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: #9DBFAF;
+    }
+
+    .searchTerm:focus{
+        color: #00B4CC;
+    }
+
+    .searchButton {
+        width: 40px;
+        height: 36px;
+        border: 1px solid #00B4CC;
+        background: #00B4CC;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 20px;
     }
 
     .subtotal-price {

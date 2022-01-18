@@ -4,7 +4,7 @@ import { auth } from "../firebase/index.js";
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
-} from 'firebase/auth'
+} from 'firebase/auth';
 
 export default createStore({
 	state: {
